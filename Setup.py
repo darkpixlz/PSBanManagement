@@ -90,7 +90,7 @@ cprint("Successfully generated a password hash!", "green")
 try:
     with data.open("a") as file:
         for entry in supplied_data:
-            file.write(entry)
+            file.write(supplied_data[entry] + "\n")
     file.close()
 except Exception as e:
     cprint(f"Failed to save userdata with exception {e}. Are you admin/root?")
