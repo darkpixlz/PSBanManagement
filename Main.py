@@ -15,3 +15,6 @@ try:
         data = userinfofile.read()
 except Exception as e:
     pass
+
+
+app.run(host="0.0.0.0", port=data["port"])
