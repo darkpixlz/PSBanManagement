@@ -90,12 +90,14 @@ cprint("Successfully generated a password hash!", "green")
 try:
     with data.open("a") as file:
         for entry in supplied_data:
-            file.write(supplied_data[entry] + "\n")
+            file.write(entry + " = " + supplied_data[entry] + ",\n")
     file.close()
 except Exception as e:
     cprint(f"Failed to save userdata with exception {e}. Are you admin/root?")
+    exit('Something went wrong, try again later.')
 
 cprint("Saved!", "green")
+
 print("""
 From now, you're all good to go. To start the server, just run:
 
@@ -103,3 +105,4 @@ python3 main.py
 
 Exiting with success...
 """)
+exit("Success!")
